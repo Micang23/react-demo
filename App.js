@@ -1,43 +1,29 @@
 
 import React from 'react';
-import { 
-  StyleSheet, 
-  Text, 
-  View, 
-  TouchableWithoutFeedback, 
-  TouchableNativeFeedback, 
-  TouchableHighlight,
-  SafeAreaView, 
-  Platform, 
-  Image, 
-  Button,
-  Alert,
-  StatusBar,
-  Dimensions
+import {
+  View,
 } from 'react-native';
 
 export default function App() {
-  console.log(Dimensions.get('screen'));
 
   return (
-    <SafeAreaView style={styles.container, styles.droidSafeArea}>
+    <View style={{
+      backgroundColor: "#aaa",
+      flex: 1
+    }}>
       <View style={{
-        backgroundColor: 'yellow',
-        width: '50%',
-        height: '30%'
-      }}></View>
-    </SafeAreaView>
+        backgroundColor: "dodgerblue",
+        flex: 2
+      }}/>
+      <View style={{
+        backgroundColor: "gold",
+        flex: 1
+      }}/>
+      <View style={{
+        backgroundColor: "tomato",
+        flex: 1
+      }}/>
+    </View>
+
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#000',
-  },
-  droidSafeArea: {
-    flex: 1,
-    backgroundColor: '#fff',
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
-  }
-});

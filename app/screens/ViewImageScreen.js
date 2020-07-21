@@ -4,10 +4,12 @@ import { Image, StyleSheet, View, Platform } from 'react-native';
 import colors from '../config/colors';
 
 function ViewImageScreen(props) {
-    
+    console.log('Image: ', props.route)
     return (
         <View style={styles.container}>
-            <View style={styles.closeIcon}></View>
+            <View
+                style={styles.closeIcon}
+                onPress={()=>console.log('tapped')}></View>
             <View style={styles.deleteIcon}></View>
             <Image
                 resizeMode="contain"
@@ -23,6 +25,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.black,
         flex: 1,
         paddingTop: Platform.OS === 'android' ? 25 : 0,
+        color: colors.white
     },
     closeIcon: {
         width: 50,

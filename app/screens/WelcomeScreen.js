@@ -8,6 +8,7 @@ function WelcomeScreen({ navigation }) {
 
     return (
         <ImageBackground 
+          blurRadius={2}
           style={styles.background}
           source={require('../assets/background.jpg')}>
             <View style={styles.logoContainer}>
@@ -65,7 +66,6 @@ const styles = StyleSheet.create({
     text: {
         color: "#fff",
         fontSize: 20,
-
     }
 })
 

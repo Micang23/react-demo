@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     StyleSheet,
     SafeAreaView,
@@ -11,9 +11,11 @@ import {
 
 import  colors from '../config/colors';
 
-function SignUp(props) {
+function SignUp({ navigation }) {
 
     const onRegister = () => console.log('On Register!');
+    const onBack = () => navigation.goBack();
+    const textPressed = () => console.log('is text pressed');
 
     return (
         <SafeAreaView style={styles.container}>
@@ -23,13 +25,15 @@ function SignUp(props) {
                 <Image style={styles.logo} source={require('../assets/logo-red.png')}/>
                 <TextInput
                     style={styles.textInput}
-                    placeholder="First Name"/>
+                    placeholder="First Name"
+                    onPress={textPressed}/>
                 <TextInput
                     style={styles.textInput}
                     placeholder="Last Name"/>
                 <TextInput
                     style={styles.textInput}
-                    placeholder="Email"/>
+                    placeholder="Email"
+                    keyboardType="email-address"/>
                 <TextInput
                     style={styles.textInput}
                     placeholder="Password"
@@ -46,7 +50,7 @@ function SignUp(props) {
                 </TouchableOpacity>
                     
                 <TouchableOpacity
-                    onPress={onRegister}
+                    onPress={onBack}
                     style={styles.goBackButton}>
                     <Text style={styles.textButton}>Back</Text>
                 </TouchableOpacity>

@@ -11,10 +11,10 @@ import {
 
 import  colors from '../config/colors';
 
-function SignIn(props) {
+function SignIn({navigation}) {
 
-    const onLogIn = () => console.log('On Login');
-    const onRegister = () => console.log('On register');
+    const onLogIn = () => navigation.navigate('Image', { name: 'Image' });
+    const onRegister = () => navigation.navigate('Sign Up', {name: 'Sign Up'});
 
     return (
         <SafeAreaView style={styles.container}>
@@ -23,6 +23,7 @@ function SignIn(props) {
                 <TextInput
                     style={styles.textInput}
                     placeholder="Email"/>
+                    
                 <TextInput
                     style={styles.textInput}
                     placeholder="Password"/>

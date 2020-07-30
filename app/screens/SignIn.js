@@ -6,23 +6,25 @@ import {
     TextInput,
     Text,
     View,
-    TouchableOpacity
+    TouchableOpacity,
+    StatusBar
 } from 'react-native';
 
-import  colors from '../config/colors';
+import colors from '../config/colors';
 
-function SignIn({navigation}) {
-
-    const onLogIn = () => navigation.navigate('Image', { name: 'Image' });
-    const onRegister = () => navigation.navigate('Sign Up', {name: 'Sign Up'});
+function SignIn(props) {
+    const onLogIn = () => props.navigation.navigate('Image', { name: 'Image' });
+    const onRegister = () => props.navigation.navigate('Sign Up', {name: 'Sign Up'});
 
     return (
         <SafeAreaView style={styles.container}>
+            <StatusBar backgroundColor="white" barStyle="dark-content" />
             <View style={{flexDirection: 'column'}}>
                 <Image style={styles.logo} source={require('../assets/logo-red.png')}/>
                 <TextInput
                     style={styles.textInput}
-                    placeholder="Email"/>
+                    placeholder="Email"
+                    keyboardType="email-address"/>
                     
                 <TextInput
                     style={styles.textInput}
@@ -33,7 +35,7 @@ function SignIn({navigation}) {
                     style={styles.loginButton}>
                     <Text style={styles.textLogin}>LOG IN</Text>
                 </TouchableOpacity>
-                    
+
                 <TouchableOpacity
                     onPress={onRegister}
                     style={styles.registerButton}>

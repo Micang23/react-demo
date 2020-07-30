@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Easing } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack';
 import 'react-native-gesture-handler';
@@ -20,13 +19,6 @@ export default function App() {
     resDisplacementThreshold: 0.01,
     restSpeedThreshold: 0.01
   }
-  const closeConfig = {
-    animation: 'timing',
-    config: {
-      duration: 200,
-      easing: Easing.linear
-    }
-  }
 
   return (
     <NavigationContainer>
@@ -35,10 +27,6 @@ export default function App() {
           gestureEnabled: true,
           gestureDirection: "horizontal",
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-          transitionSpec: {
-            open: config,
-            close: closeConfig
-          }
         }}
         headerMode="float"
         animation="fade">

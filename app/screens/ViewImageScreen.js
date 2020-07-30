@@ -1,15 +1,14 @@
 import React from 'react';
-import { Image, StyleSheet, View, Platform } from 'react-native';
+import { Image, StyleSheet, View, Platform, StatusBar } from 'react-native';
 
 import colors from '../config/colors';
 
 function ViewImageScreen(props) {
-    console.log('Image: ', props.route)
+    console.log('Image: ', props)
     return (
         <View style={styles.container}>
-            <View
-                style={styles.closeIcon}
-                onPress={()=>console.log('tapped')}></View>
+            <StatusBar backgroundColor="black" barStyle="light-content" />
+            <View style={styles.closeIcon}></View>
             <View style={styles.deleteIcon}></View>
             <Image
                 resizeMode="contain"
